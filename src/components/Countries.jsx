@@ -1,19 +1,14 @@
-import React,{useEffect,useState} from 'react';
-import axios from 'axios';
+import React from 'react';
 import Table from 'react-bootstrap/Table';
-import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css';
-
-
-
 
 
 function Countries({data}) {
 
   return (
   <div>
-    <Table striped bordered hover className='table-view'>
+    <Table striped bordered hover size='lg' className='table-view'>
       <thead>
         <tr>
           <th>Flag</th>

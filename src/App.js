@@ -28,16 +28,12 @@ function App() {
 
   const fetchAllCountries = async () =>{
     try{
-      console.log("girdi");
       const res = await axios.get("https://restcountries.com/v2/all");
-      let data = 0;
       res.data.map((value)=>{
         if(value.capital !== undefined){
-          data++;
           setFilteredCountries(filteredCountries => [...filteredCountries,value]);
         }
       });
-      console.log("data :",data);
     }catch(err){
       console.log(err);
     }
@@ -58,10 +54,7 @@ function App() {
       setCls("opt")
       setCls2("opt active")
 
-    }
-
-    console.log("status : ",filteredCountries);
-    
+    }    
 
   return (
     <div className="app">

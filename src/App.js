@@ -22,7 +22,7 @@ function App() {
 
   const searchAll = (data) =>{
     return data.filter((item)=>
-    item.capital.toLowerCase().includes(allquery.toLocaleLowerCase()) ||
+    item.capital.toLowerCase().includes(allquery.toLowerCase()) ||
     item.name.toLowerCase().includes(allquery.toLowerCase()) ||
     item.region.toLowerCase().includes(allquery.toLowerCase()) 
     );

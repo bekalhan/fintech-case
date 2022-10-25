@@ -15,14 +15,16 @@ function App() {
 
 
   const search = (data) =>{
-    return data.filter((item)=>item.capital.toLowerCase().includes(query));
+    return data.filter((item)=>
+    item.capital.toLowerCase().includes(query.toLowerCase())
+    );
   }
 
   const searchAll = (data) =>{
     return data.filter((item)=>
-    item.capital.toLowerCase().includes(allquery) ||
-    item.name.toLowerCase().includes(allquery) ||
-    item.region.toLowerCase().includes(allquery)
+    item.capital.toLowerCase().includes(allquery.toLocaleLowerCase()) ||
+    item.name.toLowerCase().includes(allquery.toLowerCase()) ||
+    item.region.toLowerCase().includes(allquery.toLowerCase()) 
     );
   }
 

@@ -14,17 +14,25 @@ function App() {
   const [cls2,setCls2] = useState("opt active");
 
 
+String.prototype.turkishToLower = function(){
+	var string = this;
+	var letters = { "İ": "i", "I": "ı", "Ş": "ş", "Ğ": "ğ", "Ü": "ü", "Ö": "ö", "Ç": "ç" };
+	string = string.replace(/(([İIŞĞÜÇÖ]))/g, function(letter){ return letters[letter]; })
+	return string.toLowerCase();
+}	
+
+
   const search = (data) =>{
     return data.filter((item)=>
-    item.capital.toLowerCase().includes(query.toLowerCase())
+    item.capital.toLowerCase().includes(query.turkishToLower())
     );
   }
 
   const searchAll = (data) =>{
     return data.filter((item)=>
-    item.capital.toLowerCase().includes(allquery.toLowerCase()) ||
-    item.name.toLowerCase().includes(allquery.toLowerCase()) ||
-    item.region.toLowerCase().includes(allquery.toLowerCase()) 
+    item.capital.turkishToLower().includes(allquery.turkishToLower()) ||
+    item.name.turkishToLower().includes(allquery.turkishToLower()) ||
+    item.region.turkishToLower().includes(allquery.turkishToLower()) 
     );
   }
 
